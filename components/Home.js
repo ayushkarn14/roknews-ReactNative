@@ -37,11 +37,14 @@ export default function Home({ route }) {
         setLoading(true);
         const value = await AsyncStorage.getItem("roknumber");
         const querySnapshot = await getDocs(collection(db, "users"));
+        console.log(value);
         querySnapshot.forEach((doc) => {
-            const obj = doc.data().bookmarks;
+            if (doc.data().phone == value) {
+                const obj = doc.data().bookmarks;
 
-            setArticles(obj);
-            setLoading(false);
+                setArticles(obj);
+                setLoading(false);
+            }
         });
     };
     let greet = "";
