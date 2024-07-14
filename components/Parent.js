@@ -22,47 +22,47 @@ export default function Parent() {
                 <Drawer.Screen
                     name="Tech"
                     component={Home}
-                    initialParams={{ category: "topics/technology" }}
+                    initialParams={{ category: "technology" }}
                 />
                 <Drawer.Screen
                     name="Business"
                     component={Home}
-                    initialParams={{ category: "topics/business" }}
+                    initialParams={{ category: "business" }}
                 />
                 <Drawer.Screen
                     name="National"
                     component={Home}
-                    initialParams={{ category: "topics/national" }}
+                    initialParams={{ category: "national" }}
                 />
                 <Drawer.Screen
                     name="Sports"
                     component={Home}
-                    initialParams={{ category: "topics/sports" }}
+                    initialParams={{ category: "sports" }}
                 />
                 <Drawer.Screen
                     name="World"
                     component={Home}
-                    initialParams={{ category: "topics/world" }}
+                    initialParams={{ category: "world" }}
                 />
                 <Drawer.Screen
                     name="Politics"
                     component={Home}
-                    initialParams={{ category: "topics/politics" }}
+                    initialParams={{ category: "politics" }}
                 />
                 <Drawer.Screen
                     name="Startup"
                     component={Home}
-                    initialParams={{ category: "topics/startup" }}
+                    initialParams={{ category: "startup" }}
                 />
                 <Drawer.Screen
                     name="Science"
                     component={Home}
-                    initialParams={{ category: "topics/science" }}
+                    initialParams={{ category: "science" }}
                 />
                 <Drawer.Screen
                     name="Automobile"
                     component={Home}
-                    initialParams={{ category: "topics/automobile" }}
+                    initialParams={{ category: "automobile" }}
                 />
             </Drawer.Navigator>
         </NavigationContainer>

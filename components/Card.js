@@ -47,14 +47,15 @@ function Card(props) {
             //add to bookmarks
             await updateDoc(ref, {
                 bookmarks: arrayUnion({
-                    authorName: props.author_name,
+                    author: props.author_name,
                     content: props.description,
                     createdAt: 1,
                     hashId: "null",
                     imageUrl: props.image_url,
-                    sourceName: props.source_name,
-                    sourceUrl: props.source_url,
+                    // readMoreUrl: props.source_name,
+                    readMoreUrl: props.source_url,
                     title: props.title,
+                    date: props.date
                 }),
             });
             // alert("add");
@@ -146,7 +147,7 @@ function Card(props) {
                     bottom: "2%",
                 }}
             >
-                from {props.source_name}
+                {props.date}
             </Text>
             <TouchableOpacity
                 onPress={handeBookmark}

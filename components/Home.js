@@ -16,7 +16,7 @@ import Card from "./Card";
 import Loader from "./Loader";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { getFirestore } from "firebase/firestore";
-import app from "../FirebaseConfig";
+import app from "../FirebaseConfig.js";
 const db = getFirestore(app);
 
 export default function Home({ route }) {
@@ -27,10 +27,10 @@ export default function Home({ route }) {
     const [loading, setLoading] = useState(true);
     const updateNews = async () => {
         setLoading(true);
-        const url = `https://inshorts.me/news/${category}?limit=100`;
+        const url = `https://inshortsapi.vercel.app/news?category=${category}`;
         let data = await fetch(url);
         let parsedData = await data.json();
-        setArticles(parsedData.data.articles);
+        setArticles(parsedData.data);
         setLoading(false);
     };
     const fetchBookmarked = async () => {
@@ -125,9 +125,10 @@ export default function Home({ route }) {
                                         title={element.title}
                                         image_url={element.imageUrl}
                                         description={element.content}
-                                        source_url={element.sourceUrl}
-                                        author_name={element.authorName}
-                                        source_name={element.sourceName}
+                                        source_url={element.readMoreUrl}
+                                        author_name={element.author}
+                                        // source_name={element.sourceName}
+                                        date={element.date}
                                     />
                                 </View>
                             );
